@@ -1,55 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Submit Feedback</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
 </head>
 <body>
-    <header>
-        <h1>Submit Feedback</h1>
-    </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="grades.html">Grades Table</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
     <main>
+        <h1>Submit Feedback</h1>
+        
         <form>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
+            <input type="email" id="email" name="email" required>
 
-            <label>Type of Feedback:</label><br>
-            <input type="radio" id="general" name="feedback_type" value="General">
-            <label for="general">General</label>
-            <input type="radio" id="bug" name="feedback_type" value="Bug Report">
-            <label for="bug">Bug Report</label>
-            <input type="radio" id="suggestion" name="feedback_type" value="Suggestion">
-            <label for="suggestion">Suggestion</label><br><br>
+            <fieldset>
+                <legend>User Type:</legend>
+                <input type="radio" id="student" name="userType" value="student">
+                <label for="student">Student</label>
+                
+                <input type="radio" id="teacher" name="userType" value="teacher">
+                <label for="teacher">Teacher</label>
+            </fieldset>
 
-            <label for="details">Feedback:</label><br>
-            <textarea id="details" name="details" rows="4" cols="40"></textarea><br><br>
+            <input type="checkbox" id="newsletter" name="newsletter" value="subscribe">
+            <label for="newsletter">Subscribe to newsletter</label>
 
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating">
-                <option value="">Select</option>
-                <option value="5">Excellent</option>
-                <option value="4">Good</option>
-                <option value="3">Average</option>
-                <option value="2">Poor</option>
-                <option value="1">Very Poor</option>
-            </select><br><br>
+            <label for="feedback">Feedback Message:</label>
+            <textarea id="feedback" name="feedback" rows="5" cols="50" placeholder="Please share your feedback here..."></textarea>
 
-            <button type="submit">Submit</button>
+            <label for="category">Feedback Category:</label>
+            <select id="category" name="category">
+                <option value="general">General</option>
+                <option value="bug-report">Bug Report</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+
+            <button type="submit">Submit Feedback</button>
         </form>
     </main>
-    <footer>
-        <p>&copy; 2025 Student Profile & Course Portal. All rights reserved.</p>
-    </footer>
 </body>
 </html>
